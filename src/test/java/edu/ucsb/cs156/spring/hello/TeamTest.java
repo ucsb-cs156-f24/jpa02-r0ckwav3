@@ -77,8 +77,4 @@ public class TeamTest {
         int expected_hash = -1226298695;
         assertEquals(team_hash, expected_hash);
     }
-   
-    // TODO: Add additional tests as needed to get to 100% jacoco line coverage, and
-    // 100% mutation coverage (all mutants timed out or killed)
-
 }
