@@ -31,6 +31,17 @@ public class TeamTest {
         assertFalse(team.equals(0), "Team object should not equal 0");
         assertFalse(team.equals("string"), "Team object should not equal string");
     }
+
+    @Test
+    public void equals_identical_team() {
+        assertTrue(team.equals(team), "Team object should equal itself");
+    }
+
+    @Test
+    public void equals_equivalent_team() {
+        Team team2 = new Team("test-team");
+        assertTrue(team.equals(team2), "Team object should equal team with equal name and members");
+    }
    
     // TODO: Add additional tests as needed to get to 100% jacoco line coverage, and
     // 100% mutation coverage (all mutants timed out or killed)
