@@ -58,6 +58,17 @@ public class TeamTest {
         assertFalse(team.equals(team3), "Team object should not equal nonequivalent team");
         assertFalse(team.equals(team4), "Team object should not equal nonequivalent team");
     }
+
+    @Test
+    public void hashCode_matchest_equivalent() {
+        Team team1 = new Team("test-team");
+        team1.addMember("Peter");
+
+        Team team2 = new Team("test-team");
+        team2.addMember("Peter");
+
+        assertEquals(team1.hashCode(), team2.hashCode());
+    }
    
     // TODO: Add additional tests as needed to get to 100% jacoco line coverage, and
     // 100% mutation coverage (all mutants timed out or killed)
