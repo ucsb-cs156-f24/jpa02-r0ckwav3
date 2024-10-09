@@ -42,6 +42,22 @@ public class TeamTest {
         Team team2 = new Team("test-team");
         assertTrue(team.equals(team2), "Team object should equal team with equal name and members");
     }
+
+    @Test
+    public void equals_non_equivalent_team() {
+        Team team2 = new Team("test-team");
+        team2.addMember("Peter");
+        Team team3 = new Team("wrong-test-team");
+        Team team4 = new Team("wrong-test-team");
+        team4.addMember("Peter");
+
+        // team2 differs in members
+        // team3 differs in team name
+        // team4 differs in both
+        assertFalse(team.equals(team2), "Team object should not equal nonequivalent team");
+        assertFalse(team.equals(team3), "Team object should not equal nonequivalent team");
+        assertFalse(team.equals(team4), "Team object should not equal nonequivalent team");
+    }
    
     // TODO: Add additional tests as needed to get to 100% jacoco line coverage, and
     // 100% mutation coverage (all mutants timed out or killed)
