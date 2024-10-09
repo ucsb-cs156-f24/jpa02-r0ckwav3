@@ -69,6 +69,14 @@ public class TeamTest {
 
         assertEquals(team1.hashCode(), team2.hashCode());
     }
+
+    // this is needed to pass mutation testing
+    @Test
+    public void hashCode_exact_value(){
+        int team_hash = team.hashCode();
+        int expected_hash = -1226298695;
+        assertEquals(team_hash, expected_hash);
+    }
    
     // TODO: Add additional tests as needed to get to 100% jacoco line coverage, and
     // 100% mutation coverage (all mutants timed out or killed)
